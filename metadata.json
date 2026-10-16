@@ -1,0 +1,6 @@
+{
+  "name": "Ремонт Под Ключ - Точность в каждом решении",
+  "description": "Официальный сайт компании: комплексный ремонт квартир под ключ в Москве и МО, калькулятор сметы, портфолио объектов и гарантия 5 лет.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

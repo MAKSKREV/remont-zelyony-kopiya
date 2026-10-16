@@ -1,0 +1,276 @@
+import { ProjectItem, PriceTier, ServiceItem } from '../types';
+
+export const HERO_IMAGE = 'https://lh3.googleusercontent.com/aida-public/AB6AXuAGzdBKx3INRl9piKNVm-uGUl_VXY-KEtr-hVRDi-6tbCmibwoFiNSYlT-P9rRZ2-F8ZYvGe5CK2PpOzDuISkAtzoHwUOcHgN3Q382NdLjEaMQevDPq1CD8tZBqfSf8guW_W4wTDe6NpzahvuZeVCkU0qNx0U6z7gsARoZtn8TLB4nQ9DUxO4hs-a21Hve7v3EMxRr159_SguwY8k316-IbJ3AfMCwk08Gh0n5iNRpOKkN22DPp3JUKKShjinN1M8OECJ5Ct9Mi_KI';
+
+export const WORKER_IMAGE = 'https://lh3.googleusercontent.com/aida-public/AB6AXuB_G67vrjGCFPSRE4_cLHk6138xP56AUKh__3K95NFf_O6_B8XMYQDICV-pexITcnVFsOnJ5mfmvBP2HxC38ertLxM-OJkykvL_dtNkiI4jAQidqHk6c-trLZN3ZNK41eWPfeO2hqNXZUFpMBipVEsaPtqtaEpRsdETZO9t5rFzL5Yxfut_0RWBWJwztd5qFmkl22k1_Y4B2MhN8vNLzNCCT1z7v3rcsbMRFzbO72R7NHKzvkBf1jNJ_2nNLaeZpwA1oAe8UjtQAkw';
+
+export const SERVICES: ServiceItem[] = [
+  {
+    id: 'design',
+    title: 'Проектирование',
+    icon: 'architecture',
+    shortDesc: 'Детальный дизайн-проект и рабочая документация. Мы продумываем каждый узел до начала работ, чтобы исключить ошибки на стройке.',
+    fullDesc: 'Создаем полный комплект технической и эстетической документации. Дизайн-проект позволяет еще до начала демонтажа увидеть будущий интерьер в 3D и точно рассчитать объем материалов без переплат.',
+    deliverables: [
+      '3D-визуализация всех помещений',
+      'Планы демонтажа и монтажа перегородок',
+      'Схема электрики, розеток и сценариев освещения',
+      'Привязка сантехники и вентиляционных каналов',
+      'Ведомость отделочных материалов и чистового оборудования'
+    ],
+    materials: ['Инженерные альбомы ГОСТ/СНиП', '3D Photorealistic Render', 'AutoCAD / Revit Спецификации']
+  },
+  {
+    id: 'rough',
+    title: 'Черновые работы',
+    icon: 'construction',
+    shortDesc: 'Возведение перегородок, стяжка, штукатурка, разводка инженерных сетей (электрика, сантехника, вентиляция) по строгим стандартам.',
+    fullDesc: 'Черновой этап — это фундамент вашего будущего комфорта. Мы используем только сертифицированные материалы Knauf, Rehau, ABB и проверяем геометрию стен и полов с помощью лазерных нивелиров.',
+    deliverables: [
+      'Возведение перегородок из пазогребня или газобетона',
+      'Выравнивание стен по маякам под 90° в мокрых зонах',
+      'Шумоизоляция полов и межквартирных стен',
+      'Разводка сантехники коллекторным способом (Rehau Rautitan)',
+      'Сборка электрощита с УЗО и автоматоми ABB'
+    ],
+    materials: ['Пескобетон М300', 'Штукатурка Knauf Rotband', 'Трубы Rehau Rautitan', 'Кабель ВВГнг-LS ГОСТ']
+  },
+  {
+    id: 'finish',
+    title: 'Чистовая отделка',
+    icon: 'format_paint',
+    shortDesc: 'Укладка напольных покрытий, малярные работы, монтаж потолков, установка дверей и финишной сантехники с ювелирной точностью.',
+    fullDesc: 'Финальный этап создания уюта. Все работы выполняются мастерами узкого профиля с использованием профессионального инструмента Festool, Mirka и DeWalt.',
+    deliverables: [
+      'Финишная шпаклевка под покраску/обои под боковой свет',
+      'Укладка крупноформатного керамогранита и кварцвинила',
+      'Монтаж инженерной доски и паркета на клей',
+      'Установка скрытых дверей (Invisible) и плинтусов теневого шва',
+      'Монтаж трековых светильников, сантехники и выключателей'
+    ],
+    materials: ['Краска Little Greene / Caparol', 'Керамогранит Italon / Marazzi', 'Паркетная доска', 'Сантехника Grohe / Hansgrohe']
+  }
+];
+
+export const PROJECTS: ProjectItem[] = [
+  {
+    id: 'project-1',
+    title: 'Скандинавская квартира',
+    category: 'scandinavian',
+    categoryLabel: 'Скандинавский стиль',
+    area: 75,
+    duration: '3 мес.',
+    cost: '1 650 000 ₽',
+    location: 'ЖК «Символ», м. Авиамоторная',
+    mainImage: 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=2000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    gallery: [
+      'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=2000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+      'https://images.unsplash.com/photo-1600585154526-990dced4db0d?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+      'https://images.unsplash.com/photo-1616047006789-b7af5afb8c20?q=80&w=2080&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+    ],
+    description: 'Светлая трехкомнатная квартира с открытой планировкой. Применены натуральные деревянные текстуры, теплый текстиль и безрамочное освещение.',
+    highlights: [
+      'Полное выравнивание стен под покраску Q4',
+      'Укладка инженерной доски дуб "елочкой"',
+      'Скрытый встроенный кухонный гарнитур',
+      'Мастер-спальня со своей гардеробной'
+    ]
+  },
+  {
+    id: 'project-2',
+    title: 'Лофт в центре',
+    category: 'loft',
+    categoryLabel: 'Лофт',
+    area: 120,
+    duration: '5 мес.',
+    cost: '3 100 000 ₽',
+    location: 'ЖК «Art Residence», м. Белорусская',
+    mainImage: 'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    gallery: [
+      'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+      'https://images.unsplash.com/photo-1600585154206-8d6d0c6b4b7a?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+      'https://images.unsplash.com/photo-1617098591651-dd95032bc8bb?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+    ],
+    description: 'Двухуровневые апартаменты с потолками 4.2 метра. Сохранен аутентичный клинкерный кирпич, смонтированы стальные конвекторы и скрытый трековый свет.',
+    highlights: [
+      'Зонирование стальными стеклянными перегородками',
+      'Черная матовая сантехника Hansgrohe',
+      'Внутрипольные конвекторы Varmann',
+      'Система "Умный дом" Яндекс / KNX'
+    ]
+  },
+  {
+    id: 'project-3',
+    title: 'Минимализм в ЖК',
+    category: 'minimalism',
+    categoryLabel: 'Минимализм',
+    area: 95,
+    duration: '4 мес.',
+    cost: '2 350 000 ₽',
+    location: 'ЖК «Сердце Столицы», м. Шелепиха',
+    mainImage: 'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?q=80&w=2032&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    gallery: [
+      'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?q=80&w=2032&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+      'https://images.unsplash.com/photo-1616046229478-9901c5536a45?q=80&w=2080&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+      'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+    ],
+    description: 'Лаконичный интерьер в нейтральной серo-молочной гамме. Отсутствие внешних ручек, теневой плинтус и встроенная мебель во всю высоту.',
+    highlights: [
+      'Теневой профиль по периметру всех потолков и полов',
+      'Крупноформатный керамогранит 120х60 в санузле',
+      'Полная звукоизоляция пола и стен SoundGuard',
+      'Приточно-вытяжная вентиляция с фильтрацией'
+    ]
+  },
+  {
+    id: 'project-4',
+    title: 'Современная классика',
+    category: 'classic',
+    categoryLabel: 'Современная классика',
+    area: 110,
+    duration: '4.5 мес.',
+    cost: '2 800 000 ₽',
+    location: 'ЖК «Прайм Парк», м. Динамо',
+    mainImage: 'https://images.unsplash.com/photo-1600585152220-90363fe7e115?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    gallery: [
+      'https://images.unsplash.com/photo-1600585152220-90363fe7e115?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+      'https://images.unsplash.com/photo-1600607686527-6fb886090705?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+      'https://images.unsplash.com/photo-1613490493576-7fde63acd811?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+    ],
+    description: 'Элегантный интерьер с аккуратной гипсовой лепниной, высокой филенчатой дверной группой и мраморным рисунком в ванной комнате.',
+    highlights: [
+      'Классический лепной декор из гипса высшего качества',
+      'Двери высота 2.4м под индивидуальный заказ',
+      'Кварцевые столешницы на кухне и в ванной',
+      'Теплые полы DEVI с Wi-Fi терморегуляторами'
+    ]
+  },
+  {
+    id: 'project-5',
+    title: 'Студия Премиум',
+    category: 'minimalism',
+    categoryLabel: 'Минимализм',
+    area: 48,
+    duration: '2.5 мес.',
+    cost: '1 250 000 ₽',
+    location: 'ЖК «Пресня Сити», м. 1905 года',
+    mainImage: 'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?q=80&w=1980&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    gallery: [
+      'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?q=80&w=1980&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+      'https://images.unsplash.com/photo-1554995207-c18c203602cb?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+      'https://images.unsplash.com/photo-1484154218962-a197022b5858?q=80&w=2074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+    ],
+    description: 'Компактное эргономичное пространство с выверенной трансформацией зон спальни и гостиной.',
+    highlights: [
+      'Встроенная трансформируемая мебель',
+      'Светодиодные скрытые ниши',
+      'Сантехника с гигиеническим душем и скрытым бачком'
+    ]
+  },
+  {
+    id: 'project-6',
+    title: 'Лофт апартаменты',
+    category: 'loft',
+    categoryLabel: 'Лофт',
+    area: 140,
+    duration: '6 мес.',
+    cost: '3 850 000 ₽',
+    location: 'ЖК «Даниловская Мануфактура», м. Тульская',
+    mainImage: 'https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    gallery: [
+      'https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+      'https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+      'https://images.unsplash.com/photo-1550581190-9c1c48d21d6c?q=80&w=2009&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+    ],
+    description: 'Просторный пентхаус с диким камнем, микроцементом на стенах и открытыми балками.',
+    highlights: [
+      'Микроцементное покрытие стен и с/у',
+      'Панорамное остекление',
+      'Акустический подвесной потолок'
+    ]
+  }
+];
+
+export const PRICE_TIERS: PriceTier[] = [
+  {
+    id: 'cosmetic',
+    title: 'Косметический',
+    pricePerMeter: 12000,
+    description: 'Освежение интерьера без перепланировки и глобальной замены коммуникаций. Идеально для предпродажной подготовки или аренды.',
+    features: [
+      'Покраска или поклейка обоев',
+      'Замена напольного покрытия (ламинат/линолеум)',
+      'Замена розеток и выключателей в сухих зонах',
+      'Установка плинтусов и галтелей',
+      'Косметическая покраска потолка',
+      'Финальный клининг помещения'
+    ],
+    materialsIncluded: 'Закупка чистовых материалов по ценам дилера РемонтПросто'
+  },
+  {
+    id: 'standard',
+    title: 'Капитальный',
+    pricePerMeter: 22000,
+    isPopular: true,
+    badge: 'Самый популярный',
+    description: 'Полный комплекс строительно-монтажных работ под ключ, включая демонтаж, стяжку, разводку электрики, водоснабжения и финальную отделку.',
+    features: [
+      'Возведение новых перегородок и геометрия 90°',
+      'Полная замена электрики (кабель ГОСТ, щиток)',
+      'Разводка сантехники коллектором Rehau',
+      'Стяжка пола с шумоизоляцией',
+      'Укладка плитки, керамогранита, паркета',
+      'Малярные работы повышенной точности Q3',
+      'Гарантия 5 лет по официальному договору'
+    ],
+    materialsIncluded: 'Включает весь комплект черновой инженерии и смеси Knauf/Ceresit'
+  },
+  {
+    id: 'designer',
+    title: 'Дизайнерский',
+    pricePerMeter: 35000,
+    badge: 'Премиум качество',
+    description: 'Эксклюзивный ремонт по авторскому дизайн-проекту с индивидуальным авторским надзором, скрытыми дверьми, теневым профилем и умным домом.',
+    features: [
+      'Индивидуальный 3D дизайн-проект и авторский надзор',
+      'Подготовка стен под покраску класса Q4',
+      'Установка скрытых дверей Invisible и теневого плинтуса',
+      'Монтаж трековых систем и магнитных светильников',
+      'Интеграция систем "Умный дом" и кондиционирования',
+      'Укладка крупноформатного керамогранита до 300x100 см',
+      'Персональный технадзор 24/7 с фото/видеоотчетами'
+    ],
+    materialsIncluded: 'Премиум черновая и инженерная группа (ABB, Rehau, Knauf, SoundGuard)'
+  }
+];
+
+export const PROCESS_STEPS = [
+  {
+    num: '01',
+    title: 'Смета',
+    description: 'Выезд инженера, замеры и составление прозрачной детализированной сметы без скрытых платежей.',
+    details: 'Наш замерщик приезжает на объект с 3D-сканером и лазерным дальномером. В течение 24 часов вы получаете смету с точностью до 98%, фиксирующую единичные расценки.',
+    icon: 'calculate'
+  },
+  {
+    num: '02',
+    title: 'Договор',
+    description: 'Подписание официального договора с фиксацией сроков, стоимости и 5-летней гарантии.',
+    details: 'Юридически зафиксированная ответственность РемонтПросто. Указываем точную дату сдачи, график выплат по этапам и штрафные санкции за задержку.',
+    icon: 'description'
+  },
+  {
+    num: '03',
+    title: 'Работы',
+    description: 'Выполнение всех этапов ремонта профильными специалистами под контролем технадзора.',
+    details: 'Работы ведутся строго по технологическим картам производителей (Knauf, Rehau). За объектом закреплен независимый инспектор технадзора, высылающий фотоотчеты каждые 2 дня в WhatsApp/Telegram.',
+    icon: 'engineering'
+  },
+  {
+    num: '04',
+    title: 'Сдача',
+    description: 'Генеральная уборка, финальная приемка объекта и передача ключей счастливому заказчику.',
+    details: 'Проводим профессиональный клининг, подписываем акт приемки-передачи, передаем гарантийный сертификат на 5 лет и полный комплект исполнительной документации.',
+    icon: 'check_circle'
+  }
+];
