@@ -123,7 +123,7 @@ export default function App() {
       <Footer onNavigate={scrollToSection} />
 
       {/* Floating Chat Button */}
-      {!aiConsultantOpen && (
+      {!aiConsultantOpen && !import.meta.env.STATIC_HOSTING && (
         <div className="fixed bottom-6 right-6 z-40 flex flex-col items-end gap-3">
           {showChatHint && (
             <div className="bg-white rounded-2xl shadow-xl border border-[#E2E8F0] px-4 py-3 max-w-[220px] animate-fadeIn relative">
@@ -166,6 +166,7 @@ export default function App() {
       />
 
       <ProjectDetailModal
+        key={selectedProject?.id || "closed"}
         project={selectedProject}
         onClose={() => setSelectedProject(null)}
         onRequestQuote={handleRequestQuoteFromProject}

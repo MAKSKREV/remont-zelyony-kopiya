@@ -12,12 +12,11 @@ export const CallbackModal: React.FC<CallbackModalProps> = ({
   onClose,
   title = 'Заказать обратный звонок',
 }) => {
-  if (!isOpen) return null;
-
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [submitError, setSubmitError] = useState('');
 
   const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     let val = e.target.value.replace(/\D/g, '');
@@ -43,22 +42,30 @@ export const CallbackModal: React.FC<CallbackModalProps> = ({
     e.preventDefault();
     if (!name.trim() || !phone.trim()) return;
 
+    setSubmitError('');
+    if (import.meta.env.STATIC_HOSTING) {
+      setSubmitError('Онлайн-отправка пока недоступна. Ваши данные не отправлены и остались в форме.');
+      return;
+    }
     setLoading(true);
 
     try {
-      await fetch('/api/leads', {
+      const res = await fetch('/api/leads', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ name, phone, repairType: 'Вызов инженера на замер' }),
       });
+      if (!res.ok) throw new Error('Заявка не отправлена');
       setSubmitted(true);
     } catch (err) {
       console.error(err);
-      setSubmitted(true);
+      setSubmitError('Не удалось отправить заявку. Данные остались в форме — попробуйте ещё раз.');
     } finally {
       setLoading(false);
     }
   };
+
+  if (!isOpen) return null;
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm p-4 animate-fadeIn">
@@ -99,6 +106,7 @@ export const CallbackModal: React.FC<CallbackModalProps> = ({
               </h3>
             </div>
 
+            {submitError && <p role="alert" className="text-sm text-amber-800 bg-amber-50 p-3 rounded mb-4">{submitError}</p>}
             <p className="font-inter text-xs text-[#434749] mb-6 leading-relaxed">
               Оставьте свои контакты. Замерщик приедет с лазерным оборудованием и образцами материалов.
             </p>

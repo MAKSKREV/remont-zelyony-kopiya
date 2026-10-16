@@ -13,9 +13,9 @@ export const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({
   onClose,
   onRequestQuote,
 }) => {
-  if (!project) return null;
-
   const [activePhotoIdx, setActivePhotoIdx] = useState(0);
+
+  if (!project) return null;
 
   const galleryList = project.gallery && project.gallery.length > 0 ? project.gallery : [project.mainImage];
 
@@ -32,6 +32,7 @@ export const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({
       <div className="bg-white rounded-lg max-w-4xl w-full max-h-[92vh] overflow-y-auto shadow-2xl relative border border-[#E2E8F0]">
         <button
           onClick={onClose}
+          aria-label="Закрыть галерею"
           className="absolute top-4 right-4 z-20 bg-white/80 hover:bg-white text-[#181f21] p-2 rounded-full shadow-md transition-colors cursor-pointer"
         >
           <X className="w-6 h-6" />
@@ -47,12 +48,14 @@ export const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({
           {galleryList.length > 1 && (
             <>
               <button
+                aria-label="Предыдущее фото"
                 onClick={handlePrevPhoto}
                 className="absolute left-3 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/80 text-white p-2.5 rounded-full transition-colors cursor-pointer"
               >
                 <ChevronLeft className="w-6 h-6" />
               </button>
               <button
+                aria-label="Следующее фото"
                 onClick={handleNextPhoto}
                 className="absolute right-3 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/80 text-white p-2.5 rounded-full transition-colors cursor-pointer"
               >
@@ -63,6 +66,7 @@ export const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({
                 {galleryList.map((_, idx) => (
                   <button
                     key={idx}
+                    aria-label={`Фото ${idx + 1}`}
                     onClick={() => setActivePhotoIdx(idx)}
                     className={`w-2 h-2 rounded-full transition-all cursor-pointer ${
                       activePhotoIdx === idx ? 'bg-[#0284c7] w-4' : 'bg-white/60'

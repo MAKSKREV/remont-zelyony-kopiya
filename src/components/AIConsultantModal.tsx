@@ -79,6 +79,10 @@ export const AIConsultantModal: React.FC<AIConsultantModalProps> = ({
     setLoading(true);
 
     try {
+      if (import.meta.env.STATIC_HOSTING) {
+        setMessages(prev => [...prev, {id: `offline-${Date.now()}`, sender: 'assistant', text: 'Онлайн-консультант пока недоступен. Стоимость ремонта можно рассчитать в калькуляторе на сайте.', timestamp: new Date().toLocaleTimeString([], {hour: '2-digit', minute: '2-digit'})}]);
+        return;
+      }
       const apiMessages = [
         { role: 'system', content: SYSTEM_PROMPT },
         ...messages.map((m) => ({

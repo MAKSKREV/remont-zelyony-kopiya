@@ -55,28 +55,28 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
             onClick={(e) => handleLegalClick(e, 'privacy')}
             className="text-[#434749] hover:text-[#0284c7] transition-colors"
           >
-            Privacy Policy
+            Конфиденциальность
           </a>
           <a
             href="#"
             onClick={(e) => handleLegalClick(e, 'terms')}
             className="text-[#434749] hover:text-[#0284c7] transition-colors"
           >
-            Terms of Service
+            Условия оказания услуг
           </a>
           <a
             href="#"
             onClick={(e) => handleLegalClick(e, 'cookie')}
             className="text-[#434749] hover:text-[#0284c7] transition-colors"
           >
-            Cookie Policy
+            Файлы cookie
           </a>
           <a
             href="#"
             onClick={(e) => handleLegalClick(e, 'sitemap')}
             className="text-[#434749] hover:text-[#0284c7] transition-colors"
           >
-            Sitemap
+            Карта сайта
           </a>
         </div>
       </div>

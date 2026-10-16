@@ -15,6 +15,7 @@ export const LeadForm: React.FC<LeadFormProps> = ({ initialData, onClearInitialD
   const [message, setMessage] = useState('');
 
   const [loading, setLoading] = useState(false);
+  const [submitError, setSubmitError] = useState('');
   const [submittedLead, setSubmittedLead] = useState<{ leadNumber: string; message: string } | null>(null);
 
   useEffect(() => {
@@ -49,6 +50,11 @@ export const LeadForm: React.FC<LeadFormProps> = ({ initialData, onClearInitialD
     e.preventDefault();
     if (!name.trim() || !phone.trim()) return;
 
+    setSubmitError('');
+    if (import.meta.env.STATIC_HOSTING) {
+      setSubmitError('Онлайн-отправка пока недоступна. Ваши данные не отправлены и остались в форме.');
+      return;
+    }
     setLoading(true);
 
     try {
@@ -66,6 +72,7 @@ export const LeadForm: React.FC<LeadFormProps> = ({ initialData, onClearInitialD
         body: JSON.stringify(payload),
       });
 
+      if (!res.ok) throw new Error('Заявка не отправлена');
       const data = await res.json();
 
       if (data.success) {
@@ -80,10 +87,7 @@ export const LeadForm: React.FC<LeadFormProps> = ({ initialData, onClearInitialD
       }
     } catch (err) {
       console.error('Error submitting lead:', err);
-      setSubmittedLead({
-        leadNumber: `ST-${Math.floor(1000 + Math.random() * 9000)}`,
-        message: 'Ваша заявка принята! Главный инженер свяжется с вами в ближайшие 15 минут.',
-      });
+      setSubmitError('Не удалось отправить заявку. Данные остались в форме — попробуйте ещё раз.');
     } finally {
       setLoading(false);
     }
@@ -178,6 +182,7 @@ export const LeadForm: React.FC<LeadFormProps> = ({ initialData, onClearInitialD
           </div>
 
           <div className="md:col-span-2 flex flex-col items-center gap-3 mt-2">
+            {submitError && <p role="alert" className="text-sm text-amber-800 bg-amber-50 p-3 rounded">{submitError}</p>}
             <button
               type="submit"
               disabled={loading}

@@ -1,8 +1,10 @@
 import { ProjectItem, PriceTier, ServiceItem } from '../types';
 
-export const HERO_IMAGE = 'https://lh3.googleusercontent.com/aida-public/AB6AXuAGzdBKx3INRl9piKNVm-uGUl_VXY-KEtr-hVRDi-6tbCmibwoFiNSYlT-P9rRZ2-F8ZYvGe5CK2PpOzDuISkAtzoHwUOcHgN3Q382NdLjEaMQevDPq1CD8tZBqfSf8guW_W4wTDe6NpzahvuZeVCkU0qNx0U6z7gsARoZtn8TLB4nQ9DUxO4hs-a21Hve7v3EMxRr159_SguwY8k316-IbJ3AfMCwk08Gh0n5iNRpOKkN22DPp3JUKKShjinN1M8OECJ5Ct9Mi_KI';
+const image = (name: string) => `${import.meta.env.BASE_URL}images/${name}.webp`;
 
-export const WORKER_IMAGE = 'https://lh3.googleusercontent.com/aida-public/AB6AXuB_G67vrjGCFPSRE4_cLHk6138xP56AUKh__3K95NFf_O6_B8XMYQDICV-pexITcnVFsOnJ5mfmvBP2HxC38ertLxM-OJkykvL_dtNkiI4jAQidqHk6c-trLZN3ZNK41eWPfeO2hqNXZUFpMBipVEsaPtqtaEpRsdETZO9t5rFzL5Yxfut_0RWBWJwztd5qFmkl22k1_Y4B2MhN8vNLzNCCT1z7v3rcsbMRFzbO72R7NHKzvkBf1jNJ_2nNLaeZpwA1oAe8UjtQAkw';
+export const HERO_IMAGE = image('interior-00');
+
+export const WORKER_IMAGE = image('interior-01');
 
 export const SERVICES: ServiceItem[] = [
   {
@@ -62,12 +64,8 @@ export const PROJECTS: ProjectItem[] = [
     duration: '3 мес.',
     cost: '1 650 000 ₽',
     location: 'ЖК «Символ», м. Авиамоторная',
-    mainImage: 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=2000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    gallery: [
-      'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=2000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-      'https://images.unsplash.com/photo-1600585154526-990dced4db0d?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-      'https://images.unsplash.com/photo-1616047006789-b7af5afb8c20?q=80&w=2080&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
-    ],
+    mainImage: image('interior-04'),
+    gallery: [image('interior-04'), image('interior-07'), image('interior-08')],
     description: 'Светлая трехкомнатная квартира с открытой планировкой. Применены натуральные деревянные текстуры, теплый текстиль и безрамочное освещение.',
     highlights: [
       'Полное выравнивание стен под покраску Q4',
@@ -85,12 +83,8 @@ export const PROJECTS: ProjectItem[] = [
     duration: '5 мес.',
     cost: '3 100 000 ₽',
     location: 'ЖК «Art Residence», м. Белорусская',
-    mainImage: 'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    gallery: [
-      'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-      'https://images.unsplash.com/photo-1600585154206-8d6d0c6b4b7a?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-      'https://images.unsplash.com/photo-1617098591651-dd95032bc8bb?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
-    ],
+    mainImage: image('interior-19'),
+    gallery: [image('interior-19'), image('interior-15'), image('interior-18')],
     description: 'Двухуровневые апартаменты с потолками 4.2 метра. Сохранен аутентичный клинкерный кирпич, смонтированы стальные конвекторы и скрытый трековый свет.',
     highlights: [
       'Зонирование стальными стеклянными перегородками',
@@ -108,12 +102,8 @@ export const PROJECTS: ProjectItem[] = [
     duration: '4 мес.',
     cost: '2 350 000 ₽',
     location: 'ЖК «Сердце Столицы», м. Шелепиха',
-    mainImage: 'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?q=80&w=2032&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    gallery: [
-      'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?q=80&w=2032&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-      'https://images.unsplash.com/photo-1616046229478-9901c5536a45?q=80&w=2080&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-      'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
-    ],
+    mainImage: image('interior-08'),
+    gallery: [image('interior-08'), image('interior-11'), image('interior-10')],
     description: 'Лаконичный интерьер в нейтральной серo-молочной гамме. Отсутствие внешних ручек, теневой плинтус и встроенная мебель во всю высоту.',
     highlights: [
       'Теневой профиль по периметру всех потолков и полов',
@@ -131,12 +121,8 @@ export const PROJECTS: ProjectItem[] = [
     duration: '4.5 мес.',
     cost: '2 800 000 ₽',
     location: 'ЖК «Прайм Парк», м. Динамо',
-    mainImage: 'https://images.unsplash.com/photo-1600585152220-90363fe7e115?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    gallery: [
-      'https://images.unsplash.com/photo-1600585152220-90363fe7e115?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-      'https://images.unsplash.com/photo-1600607686527-6fb886090705?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-      'https://images.unsplash.com/photo-1613490493576-7fde63acd811?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
-    ],
+    mainImage: image('interior-02'),
+    gallery: [image('interior-02'), image('interior-09'), image('interior-12')],
     description: 'Элегантный интерьер с аккуратной гипсовой лепниной, высокой филенчатой дверной группой и мраморным рисунком в ванной комнате.',
     highlights: [
       'Классический лепной декор из гипса высшего качества',
@@ -154,12 +140,8 @@ export const PROJECTS: ProjectItem[] = [
     duration: '2.5 мес.',
     cost: '1 250 000 ₽',
     location: 'ЖК «Пресня Сити», м. 1905 года',
-    mainImage: 'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?q=80&w=1980&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    gallery: [
-      'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?q=80&w=1980&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-      'https://images.unsplash.com/photo-1554995207-c18c203602cb?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-      'https://images.unsplash.com/photo-1484154218962-a197022b5858?q=80&w=2074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
-    ],
+    mainImage: image('interior-14'),
+    gallery: [image('interior-14'), image('interior-16'), image('interior-07')],
     description: 'Компактное эргономичное пространство с выверенной трансформацией зон спальни и гостиной.',
     highlights: [
       'Встроенная трансформируемая мебель',
@@ -176,12 +158,8 @@ export const PROJECTS: ProjectItem[] = [
     duration: '6 мес.',
     cost: '3 850 000 ₽',
     location: 'ЖК «Даниловская Мануфактура», м. Тульская',
-    mainImage: 'https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    gallery: [
-      'https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-      'https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-      'https://images.unsplash.com/photo-1550581190-9c1c48d21d6c?q=80&w=2009&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
-    ],
+    mainImage: image('interior-17'),
+    gallery: [image('interior-17'), image('interior-19'), image('interior-15')],
     description: 'Просторный пентхаус с диким камнем, микроцементом на стенах и открытыми балками.',
     highlights: [
       'Микроцементное покрытие стен и с/у',

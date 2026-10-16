@@ -23,7 +23,8 @@ export const Portfolio: React.FC<PortfolioProps> = ({ onSelectProject }) => {
       <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
         <div>
           <span className="font-inter font-bold text-xs uppercase tracking-widest text-[#0369a1] block mb-3">НАШИ РАБОТЫ</span>
-          <h2 className="font-montserrat font-bold text-3xl sm:text-4xl text-[#181f21]">Примеры реализованных интерьеров</h2>
+          <h2 className="font-montserrat font-bold text-3xl sm:text-4xl text-[#181f21]">Интерьеры и решения</h2>
+          <p className="text-sm text-[#747879] mt-3 max-w-lg">Подборка интерьеров, чтобы выбрать стиль будущего ремонта.</p>
         </div>
         <div className="flex flex-wrap gap-2">
           {categories.map((cat) => (
@@ -38,10 +39,10 @@ export const Portfolio: React.FC<PortfolioProps> = ({ onSelectProject }) => {
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
         {filteredProjects.map((project) => (
-          <div key={project.id} onClick={() => onSelectProject(project)} className="group overflow-hidden rounded-lg bg-white border border-[#c3c7c8]/40 transition-all duration-300 hover:shadow-xl hover:border-[#181f21]/40 cursor-pointer flex flex-col justify-between">
+          <button type="button" aria-label={`Открыть галерею: ${project.title}`} key={project.id} onClick={() => onSelectProject(project)} className="group overflow-hidden rounded-lg bg-white border border-[#c3c7c8]/40 transition-all duration-300 hover:shadow-xl hover:border-[#181f21]/40 cursor-pointer flex flex-col justify-between text-left">
             <div>
               <div className="relative h-64 overflow-hidden bg-[#e8e8e8]">
-                <div className="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-108" style={{ backgroundImage: `url('${project.mainImage}')` }} />
+                <img src={project.mainImage} alt={project.title} width={1400} height={934} loading="lazy" decoding="async" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
                 <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                   <span className="bg-white/95 text-[#181f21] font-montserrat font-bold text-xs uppercase px-4 py-2 rounded flex items-center gap-1.5 shadow-md">
                     <Maximize2 className="w-3.5 h-3.5 text-[#0284c7]" /> Смотреть галерею
@@ -62,7 +63,7 @@ export const Portfolio: React.FC<PortfolioProps> = ({ onSelectProject }) => {
                 </div>
               </div>
             </div>
-          </div>
+          </button>
         ))}
       </div>
     </section>

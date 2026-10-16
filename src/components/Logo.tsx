@@ -19,8 +19,8 @@ export const Logo: React.FC<LogoProps> = ({ className = '', variant = 'dark', si
   return (
     <div className={`flex items-center gap-2.5 sm:gap-3 ${className}`}>
       <img
-        src="/logo.png"
-        alt="Logo"
+        src={`${import.meta.env.BASE_URL}logo.png`}
+        alt="Ремонт под ключ"
         className="shrink-0 rounded-sm object-contain"
         style={{ width: iconSize, height: iconSize }}
       />
